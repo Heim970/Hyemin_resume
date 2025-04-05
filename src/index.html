@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이력서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-white">
+    <!-- 인쇄 버튼 -->
+    <button
+      onclick="printResume()"
+      class="print-btn bg-navy-700 hover:bg-navy-800 text-white p-3 rounded-full shadow-lg"
+      style="background-color: #0a192f"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path
+          d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+        ></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+    </button>
+
+    <!-- 사이드바 - 모든 섹션에서 보이도록 최상위에 배치 -->
+    <div
+      class="w-64 bg-navy-700 fixed h-full z-20"
+      style="background-color: #0a192f"
+    >
+      <div class="p-6">
+        <h2 class="text-white text-xl font-bold mb-8">이력서</h2>
+        <nav class="space-y-4">
+          <a
+            href="#hero"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="hero"
+            >홈</a
+          >
+          <a
+            href="#header"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="header"
+            >자기소개</a
+          >
+          <a
+            href="#profile"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="profile"
+            >프로필</a
+          >
+          <a
+            href="#education"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="education"
+            >학력 및 이력</a
+          >
+          <a
+            href="#certifications"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="certifications"
+            >자격증</a
+          >
+          <a
+            href="#portfolio"
+            class="text-gray-300 block py-2 px-4 nav-link"
+            data-section="portfolio"
+            >포트폴리오</a
+          >
+        </nav>
+      </div>
+    </div>
+
+    <!-- 전체 콘텐츠 영역 - 사이드바 너비만큼 여백 추가 -->
+    <div class="ml-64">
+      <!-- 히어로 섹션 (전체 화면) -->
+      <section id="hero" class="hero-section section">
+        <div class="text-center px-4">
+          <div class="typewriter mb-4">
+            <h1 class="text-5xl md:text-7xl font-bold">홍길동</h1>
+          </div>
+          <h2 class="text-2xl md:text-4xl font-semibold mt-4 mb-6">
+            프론트엔드 개발자
+          </h2>
+          <p class="text-xl max-w-2xl mx-auto opacity-80">
+            사용자 경험을 중시하는 웹 개발자로, 최신 프론트엔드 기술을 활용하여
+            직관적이고 반응성 높은 웹 애플리케이션을 구축합니다.
+          </p>
+        </div>
+        <a href="#header" class="scroll-down text-white">
+          <div class="flex flex-col items-center">
+            <span class="mb-2">스크롤 내리기</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="animate-bounce"
+            >
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </div>
+        </a>
+      </section>
+
+      <!-- 헤더 - 자기소개 및 지원 직무 -->
+      <header
+        id="header"
+        class="p-10 bg-navy-700 text-white section"
+        style="background-color: #0a192f"
+      >
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-5xl font-bold mb-4">자기소개</h1>
+          <div class="bg-opacity-20 bg-white p-6 rounded-lg">
+            <p class="text-xl mb-4">
+              안녕하세요, 프론트엔드 개발자 홍길동입니다. 저는 사용자 경험을
+              중시하는 웹 개발자로, 최신 프론트엔드 기술을 활용하여 직관적이고
+              반응성 높은 웹 애플리케이션을 구축하는 데 전문성을 가지고
+              있습니다.
+            </p>
+            <p class="text-lg mb-4">
+              React, Vue.js, TypeScript를 주로 사용하며, 사용자 중심의 디자인과
+              성능 최적화에 중점을 두고 있습니다.
+            </p>
+            <p class="text-lg">
+              저는 문제 해결 능력이 뛰어나며, 팀 협업을 중요시합니다. 새로운
+              기술을 배우는 것을 좋아하며, 지속적인 자기 개발을 통해 더 나은
+              개발자가 되기 위해 노력하고 있습니다.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- 프로필 섹션 -->
+      <section id="profile" class="p-10 bg-white section">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-2xl font-bold mb-6 text-navy-700"
+            style="color: #0a192f"
+          >
+            프로필
+          </h2>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <p class="text-gray-700">
+                  <span class="font-semibold">생년월일:</span> 1990년 1월 1일
+                </p>
+                <p class="text-gray-700 mt-2">
+                  <span class="font-semibold">이메일:</span> example@email.com
+                </p>
+              </div>
+              <div>
+                <p class="text-gray-700">
+                  <span class="font-semibold">연락처:</span> 010-1234-5678
+                </p>
+                <p class="text-gray-700 mt-2">
+                  <span class="font-semibold">주소:</span> 서울특별시 강남구
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 학력 및 이력 섹션 -->
+      <section id="education" class="p-10 bg-gray-100 section">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-2xl font-bold mb-6 text-navy-700"
+            style="color: #0a192f"
+          >
+            학력 및 이력
+          </h2>
+
+          <div class="relative pl-10 pb-4">
+            <!-- 타임라인 세로 선 -->
+            <div class="timeline-line"></div>
+
+            <!-- 고등학교 -->
+            <div class="timeline-item relative mb-12 pl-8">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-5 rounded-lg shadow-sm relative">
+                <h3
+                  class="font-bold text-lg text-navy-700"
+                  style="color: #0a192f"
+                >
+                  고등학교
+                </h3>
+                <p class="text-gray-600">2006년 - 2009년</p>
+                <div class="mt-2">
+                  <p>OO고등학교</p>
+                  <p class="text-sm text-gray-600">일반계 고등학교 졸업</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 대학교 -->
+            <div class="timeline-item relative mb-12 pl-8">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-5 rounded-lg shadow-sm relative">
+                <h3
+                  class="font-bold text-lg text-navy-700"
+                  style="color: #0a192f"
+                >
+                  대학교
+                </h3>
+                <p class="text-gray-600">2009년 - 2013년</p>
+                <div class="mt-2">
+                  <p>OO대학교 컴퓨터공학과</p>
+                  <p class="text-sm text-gray-600">학점: 3.8/4.5</p>
+                  <p class="text-sm text-gray-600">
+                    졸업 논문: 웹 애플리케이션 성능 최적화에 관한 연구
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 첫 직장 -->
+            <div class="timeline-item relative mb-12 pl-8">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-5 rounded-lg shadow-sm relative">
+                <h3
+                  class="font-bold text-lg text-navy-700"
+                  style="color: #0a192f"
+                >
+                  첫 직장
+                </h3>
+                <p class="text-gray-600">2013년 - 2016년</p>
+                <div class="mt-2">
+                  <p>OO 기업 - 웹 개발자</p>
+                  <p class="text-sm text-gray-600">
+                    HTML, CSS, JavaScript 개발
+                  </p>
+                  <p class="text-sm text-gray-600">
+                    주요 프로젝트: 기업 웹사이트 리뉴얼, 관리자 대시보드 개발
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 두번째 직장 -->
+            <div class="timeline-item relative mb-4 pl-8">
+              <div class="timeline-dot"></div>
+              <div class="bg-white p-5 rounded-lg shadow-sm relative">
+                <h3
+                  class="font-bold text-lg text-navy-700"
+                  style="color: #0a192f"
+                >
+                  현재 직장
+                </h3>
+                <p class="text-gray-600">2016년 - 현재</p>
+                <div class="mt-2">
+                  <p>OO 테크 - 프론트엔드 개발자</p>
+                  <p class="text-sm text-gray-600">
+                    React, Vue.js 프레임워크 활용
+                  </p>
+                  <p class="text-sm text-gray-600">
+                    주요 프로젝트: SaaS 플랫폼 개발, 모바일 웹 애플리케이션 구축
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 자격증 섹션 -->
+      <section id="certifications" class="p-10 bg-white section">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-2xl font-bold mb-6 text-navy-700"
+            style="color: #0a192f"
+          >
+            자격증
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+              <h3 class="font-semibold text-lg">정보처리기사</h3>
+              <p class="text-gray-600 mt-1">취득일: 2012년 5월</p>
+              <p class="text-gray-600">발행처: 한국산업인력공단</p>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+              <h3 class="font-semibold text-lg">SQLD</h3>
+              <p class="text-gray-600 mt-1">취득일: 2013년 3월</p>
+              <p class="text-gray-600">발행처: 한국데이터산업진흥원</p>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+              <h3 class="font-semibold text-lg">리눅스마스터</h3>
+              <p class="text-gray-600 mt-1">취득일: 2014년 9월</p>
+              <p class="text-gray-600">발행처: 한국정보통신진흥협회</p>
+            </div>
+            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+              <h3 class="font-semibold text-lg">AWS 솔루션스 아키텍트</h3>
+              <p class="text-gray-600 mt-1">취득일: 2018년 7월</p>
+              <p class="text-gray-600">발행처: Amazon Web Services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 포트폴리오 섹션 -->
+      <section id="portfolio" class="p-10 bg-gray-100 section">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-2xl font-bold mb-6 text-navy-700"
+            style="color: #0a192f"
+          >
+            포트폴리오
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">프로젝트 이미지</span>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-lg">쇼핑몰 웹사이트</h3>
+                <p class="text-gray-600 mt-1">
+                  React, Node.js, MongoDB를 활용한 풀스택 프로젝트
+                </p>
+                <a
+                  href="#"
+                  class="text-blue-600 mt-2 inline-block hover:underline"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">프로젝트 이미지</span>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-lg">날씨 앱</h3>
+                <p class="text-gray-600 mt-1">
+                  Vue.js와 OpenWeather API를 활용한 날씨 정보 앱
+                </p>
+                <a
+                  href="#"
+                  class="text-blue-600 mt-2 inline-block hover:underline"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">프로젝트 이미지</span>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-lg">할 일 관리 앱</h3>
+                <p class="text-gray-600 mt-1">
+                  JavaScript와 로컬 스토리지를 활용한 할 일 관리 앱
+                </p>
+                <a
+                  href="#"
+                  class="text-blue-600 mt-2 inline-block hover:underline"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
